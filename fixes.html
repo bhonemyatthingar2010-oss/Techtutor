@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Fixes — TechTutor</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .category-section {
+            margin-bottom: 48px;
+        }
+        .category-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--silver-moon);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+            letter-spacing: -0.3px;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="ink-canvas"></canvas>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tech<span>Tutor</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fixes.html" class="active">Quick Fixes</a></li>
+                <li><a href="code.html">Code Basics</a></li>
+                <li><a href="hardware.html">Hardware 101</a></li>
+                <li><a href="shortcuts.html">Shortcuts</a></li>
+                <li><a href="tips.html">Tech Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section" style="padding-top: 140px;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Quick Fixes</h2>
+                <p>60 common tech problems and their solutions. Search or browse by category.</p>
+            </div>
+
+            <div class="layout-with-sidebar">
+                <!-- Sidebar -->
+                <aside class="sidebar reveal">
+                    <h3>Categories</h3>
+                    <input type="text" id="fix-search" class="sidebar-search" placeholder="Search fixes...">
+                    <ul class="sidebar-list">
+                        <li><a href="#windows">Windows Issues</a></li>
+                        <li><a href="#mac">Mac Issues</a></li>
+                        <li><a href="#internet">Internet / Network</a></li>
+                        <li><a href="#browser">Browser Problems</a></li>
+                        <li><a href="#software">Software Crashes</a></li>
+                        <li><a href="#slow">Slow Computer</a></li>
+                        <li><a href="#printer">Printer Issues</a></li>
+                        <li><a href="#email">Email Problems</a></li>
+                        <li><a href="#storage">Storage Issues</a></li>
+                        <li><a href="#display">Display Problems</a></li>
+                        <li><a href="#audio">Audio Issues</a></li>
+                        <li><a href="#input">Keyboard / Mouse</a></li>
+                        <li><a href="#phone">Phone Issues</a></li>
+                        <li><a href="#security">Security / Virus</a></li>
+                        <li><a href="#other">Other Common Fixes</a></li>
+                    </ul>
+                    <h3 style="margin-top: 20px;">Resources</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="https://support.microsoft.com" target="_blank">Microsoft Support</a></li>
+                        <li><a href="https://support.apple.com" target="_blank">Apple Support</a></li>
+                        <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+                        <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+                        <li><a href="https://tomshardware.com" target="_blank">Tom's Hardware</a></li>
+                        <li><a href="https://howtogeek.com" target="_blank">How-To Geek</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Grouped Fixes -->
+                <div>
+                    <!-- Windows Section -->
+                    <div class="category-section reveal" id="windows">
+                        <h2 class="category-title">Windows Issues</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Windows Won't Start</h3>
+                                <p><strong>Problem:</strong> Computer turns on but Windows doesn't load.</p>
+                                <p><strong>Fix:</strong> Restart and press F8 repeatedly. Select "Safe Mode." If it works, run System Restore to undo recent changes. If not, use a Windows install USB to access Startup Repair.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Blue Screen of Death (BSOD)</h3>
+                                <p><strong>Problem:</strong> Random blue screen with error codes.</p>
+                                <p><strong>Fix:</strong> Note the error code. Update all drivers (especially graphics). Run Windows Memory Diagnostic. Check for overheating. If it started after installing something, uninstall it.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Windows Update Stuck</h3>
+                                <p><strong>Problem:</strong> Update stuck at a percentage for hours.</p>
+                                <p><strong>Fix:</strong> Wait 2-3 hours (sometimes it's slow). If truly stuck, force shutdown, restart, and run the Windows Update Troubleshooter. Clear the update cache by stopping wuauserv service and deleting C:\Windows\SoftwareDistribution.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>File Explorer Crashing</h3>
+                                <p><strong>Problem:</strong> File Explorer opens then immediately closes.</p>
+                                <p><strong>Fix:</strong> Open Task Manager, end "Windows Explorer" process, then restart it. If persists, run "sfc /scannow" in Command Prompt as admin. Clear File Explorer history.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mac Section -->
+                    <div class="category-section reveal" id="mac">
+                        <h2 class="category-title">Mac Issues</h2>
+                        <div class="category-grid">
+                            <!-- same pattern: 4 cards -->
+                            <div class="card fix-card">
+                                <h3>Mac Freezes Completely</h3>
+                                <p><strong>Problem:</strong> Screen frozen, nothing responds.</p>
+                                <p><strong>Fix:</strong> Hold power button for 10 seconds to force shutdown. Wait 30 seconds, then restart. Reset NVRAM by holding Cmd+Option+P+R on startup. Check for disk errors in Disk Utility.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Mac Running Slow</h3>
+                                <p><strong>Problem:</strong> Everything takes forever to load.</p>
+                                <p><strong>Fix:</strong> Check Activity Monitor for processes using high CPU. Clear caches. Close unused apps. Free up disk space (aim for 20% free). Consider adding more RAM if possible.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>App Won't Open on Mac</h3>
+                                <p><strong>Problem:</strong> Click app icon but it doesn't launch.</p>
+                                <p><strong>Fix:</strong> Force quit the app (Cmd+Option+Esc). Check if it's blocked by Gatekeeper (System Settings > Privacy & Security). Try reinstalling the app. Check Console for error messages.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Mac Won't Connect to Wi-Fi</h3>
+                                <p><strong>Problem:</strong> Wi-Fi icon shows but no connection.</p>
+                                <p><strong>Fix:</strong> Turn Wi-Fi off and on. Forget the network and rejoin. Reset the SMC (System Management Controller). Renew DHCP lease in Network settings.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Internet Section -->
+                    <div class="category-section reveal" id="internet">
+                        <h2 class="category-title">Internet / Network</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Wi-Fi Connected But No Internet</h3>
+                                <p><strong>Problem:</strong> Connected to router but can't browse.</p>
+                                <p><strong>Fix:</strong> Restart modem and router. Check if other devices work (isolates the problem). Run "ipconfig /flushdns" in Command Prompt. Change DNS to 8.8.8.8. Contact ISP if nothing works.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Slow Internet Speed</h3>
+                                <p><strong>Problem:</strong> Pages load slowly, buffering constantly.</p>
+                                <p><strong>Fix:</strong> Test speed at speedtest.net. Compare to your plan. Move closer to router or use ethernet. Restart router. Check for background downloads. Update router firmware.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>DNS Server Not Responding</h3>
+                                <p><strong>Problem:</strong> "DNS server not responding" error.</p>
+                                <p><strong>Fix:</strong> Flush DNS: open Command Prompt and type "ipconfig /flushdns". Change DNS servers to 8.8.8.8 and 8.8.4.4 (Google). Restart your router. Update network adapter drivers.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Ethernet Not Working</h3>
+                                <p><strong>Problem:</strong> Cable plugged in but no connection.</p>
+                                <p><strong>Fix:</strong> Check cable isn't damaged. Try different port on router. Run network troubleshooter. Update network adapter driver. In Device Manager, disable and re-enable the adapter.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Browser Section -->
+                    <div class="category-section reveal" id="browser">
+                        <h2 class="category-title">Browser Problems</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Browser Running Slow</h3>
+                                <p><strong>Problem:</strong> Pages take forever to load in browser.</p>
+                                <p><strong>Fix:</strong> Clear browsing data (cache, cookies). Disable unused extensions. Check for browser updates. Close unused tabs. Try a different browser to isolate the issue.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Chrome Crashes Constantly</h3>
+                                <p><strong>Problem:</strong> Chrome randomly closes or freezes.</p>
+                                <p><strong>Fix:</strong> Update Chrome. Clear cache. Disable extensions one by one to find culprit. Reset Chrome settings. If all fails, uninstall and reinstall Chrome.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Can't Clear Browser History</h3>
+                                <p><strong>Problem:</strong> History won't delete.</p>
+                                <p><strong>Fix:</strong> Check if browser is synced (Google account, Firefox sync). Clear sync data. Try using keyboard shortcut (Ctrl+Shift+Delete). Use CCleaner for stubborn data. Check if a policy is blocking clearing (school/work computers).</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Pop-up Ads Everywhere</h3>
+                                <p><strong>Problem:</strong> Constant pop-ups even when not browsing.</p>
+                                <p><strong>Fix:</strong> This is likely adware. Install Malwarebytes and run a full scan. Remove suspicious browser extensions. Reset browser settings. Check installed programs for anything you didn't install.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Software Section -->
+                    <div class="category-section reveal" id="software">
+                        <h2 class="category-title">Software Crashes</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Program Won't Open</h3>
+                                <p><strong>Problem:</strong> Double-click but nothing happens.</p>
+                                <p><strong>Fix:</strong> Check Task Manager to see if it's running but hidden. Right-click and "Run as Administrator". Reinstall the program. Check for compatibility issues with your OS version.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Program Keeps Freezing</h3>
+                                <p><strong>Problem:</strong> App works for a while then freezes.</p>
+                                <p><strong>Fix:</strong> Update the program. Check if your computer meets minimum requirements. Close other programs to free up RAM. Update your GPU drivers (especially for creative apps).</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Software Install Fails</h3>
+                                <p><strong>Problem:</strong> Installation errors midway through.</p>
+                                <p><strong>Fix:</strong> Run installer as administrator. Check for enough disk space. Temporarily disable antivirus. Download a fresh copy of the installer. Check Windows Installer service is running.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>App Missing After Update</h3>
+                                <p><strong>Problem:</strong> Program disappeared after system update.</p>
+                                <p><strong>Fix:</strong> Check if it's been moved (search in Start menu). Look in Program Files folders. Check if it was uninstalled by the update. Reinstall from original source.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slow Computer Section -->
+                    <div class="category-section reveal" id="slow">
+                        <h2 class="category-title">Slow Computer</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Computer Takes Forever to Start</h3>
+                                <p><strong>Problem:</strong> Boot time is 5+ minutes.</p>
+                                <p><strong>Fix:</strong> Disable startup programs (Task Manager > Startup). Update to SSD if you have HDD. Clean up disk (Disk Cleanup tool). Check for malware. Consider fresh Windows install.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Everything Is Slow</h3>
+                                <p><strong>Problem:</strong> All programs lag, even simple tasks.</p>
+                                <p><strong>Fix:</strong> Check RAM usage in Task Manager. Close unused apps. Run malware scan. Check disk health (CrystalDiskInfo). Consider upgrading RAM or switching to SSD.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>High CPU Usage</h3>
+                                <p><strong>Problem:</strong> Fan runs constantly, CPU near 100%.</p>
+                                <p><strong>Fix:</strong> Open Task Manager, sort by CPU. End task on suspicious processes. Check for mining malware. Update Windows. Clean dust from vents.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Low Memory Warnings</h3>
+                                <p><strong>Problem:</strong> "Your computer is low on memory" popup.</p>
+                                <p><strong>Fix:</strong> Close unused programs. Increase virtual memory (System Properties > Advanced > Performance Settings > Advanced > Virtual Memory). Add more RAM if possible.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Printer Section -->
+                    <div class="category-section reveal" id="printer">
+                        <h2 class="category-title">Printer Issues</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Printer Not Detected</h3>
+                                <p><strong>Problem:</strong> Computer can't find the printer.</p>
+                                <p><strong>Fix:</strong> Check USB cable or Wi-Fi connection. Restart printer and computer. Remove printer from Devices and re-add it. Update printer drivers from manufacturer's website.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Printer Prints Blank Pages</h3>
+                                <p><strong>Problem:</strong> Paper comes out blank.</p>
+                                <p><strong>Fix:</strong> Check ink/toner levels. Run printer head cleaning utility. Make sure you removed protective tape from new cartridge. Try printing a test page directly from printer.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Paper Jam</h3>
+                                <p><strong>Problem:</strong> Paper stuck inside printer.</p>
+                                <p><strong>Fix:</strong> Turn off and unplug printer. Open all access panels. Pull paper out gently in the direction it feeds. Check for small pieces left behind. Reset printer.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Printer Offline</h3>
+                                <p><strong>Problem:</strong> Status shows "offline" but printer is on.</p>
+                                <p><strong>Fix:</strong> Right-click printer > "Use Printer Online" (uncheck "Use Printer Offline"). Restart print spooler service. Re-add the printer. Check network connection for network printers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Section -->
+                    <div class="category-section reveal" id="email">
+                        <h2 class="category-title">Email Problems</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Can't Send Emails</h3>
+                                <p><strong>Problem:</strong> Emails stuck in outbox.</p>
+                                <p><strong>Fix:</strong> Check internet connection. Verify outgoing server settings (SMTP). Check if email is too large. Restart email client. Check if account needs re-authentication.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Not Receiving Emails</h3>
+                                <p><strong>Problem:</strong> No new emails coming in.</p>
+                                <p><strong>Fix:</strong> Check junk/spam folder. Check email filters/rules. Verify incoming server settings. Check storage quota (full mailbox blocks new mail). Refresh the inbox.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Email Won't Sync</h3>
+                                <p><strong>Problem:</strong> Emails on phone don't match computer.</p>
+                                <p><strong>Fix:</strong> Check sync settings in email app. Force manual sync. Remove account and re-add it. Update email app. Check account settings on all devices.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Forgot Email Password</h3>
+                                <p><strong>Problem:</strong> Can't log into email account.</p>
+                                <p><strong>Fix:</strong> Use "Forgot Password" link. Check recovery email or phone. Answer security questions. Contact email provider support if all else fails.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Storage Section -->
+                    <div class="category-section reveal" id="storage">
+                        <h2 class="category-title">Storage Issues</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Disk Almost Full</h3>
+                                <p><strong>Problem:</strong> "Low disk space" warning.</p>
+                                <p><strong>Fix:</strong> Run Disk Cleanup. Delete unused programs. Clear downloads folder. Empty recycle bin. Move large files to external drive. Use Storage Sense (Windows 10/11).</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>External Drive Not Detected</h3>
+                                <p><strong>Problem:</strong> USB drive plugged in but nothing happens.</p>
+                                <p><strong>Fix:</strong> Try different USB port. Check Device Manager for unrecognized device. Try on another computer. Check if drive needs power (larger drives). Use Disk Management to assign letter.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Can't Delete a File</h3>
+                                <p><strong>Problem:</strong> "File is in use" or "Access denied" when deleting.</p>
+                                <p><strong>Fix:</strong> Close programs that might use it. Restart computer and try again. Use "Unlocker" tool. Take ownership of the file. Try deleting in Safe Mode.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>USB Drive Write-Protected</h3>
+                                <p><strong>Problem:</strong> Can't copy files to USB, says write-protected.</p>
+                                <p><strong>Fix:</strong> Check for physical write-protect switch on the drive. Use Diskpart to remove write protection. Scan for malware. Format the drive as a last resort (data will be erased).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Display Section -->
+                    <div class="category-section reveal" id="display">
+                        <h2 class="category-title">Display Problems</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Screen Flickering</h3>
+                                <p><strong>Problem:</strong> Display flickers or flashes.</p>
+                                <p><strong>Fix:</strong> Check cable connection. Update GPU drivers. Try different refresh rate. Check if it happens in Safe Mode (isolates driver issue). Try different monitor to isolate problem.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Wrong Screen Resolution</h3>
+                                <p><strong>Problem:</strong> Everything looks stretched or tiny.</p>
+                                <p><strong>Fix:</strong> Right-click desktop > Display Settings. Set to recommended resolution. Check GPU driver is installed. Try different scaling setting.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Second Monitor Not Detected</h3>
+                                <p><strong>Problem:</strong> External monitor shows nothing.</p>
+                                <p><strong>Fix:</strong> Check cable is connected. Press Windows+P and select "Extend" or "Duplicate". Check input source on monitor. Update GPU drivers. Try different port.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Screen Went Black</h3>
+                                <p><strong>Problem:</strong> Screen suddenly black but computer running.</p>
+                                <p><strong>Fix:</strong> Check monitor power. Try different cable. Press Ctrl+Shift+Windows+B to restart graphics driver. Try external monitor on laptop. Check brightness settings.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audio Section -->
+                    <div class="category-section reveal" id="audio">
+                        <h2 class="category-title">Audio Issues</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>No Sound at All</h3>
+                                <p><strong>Problem:</strong> Computer makes no sound.</p>
+                                <p><strong>Fix:</strong> Check volume isn't muted. Check correct output device is selected. Update audio drivers. Check speaker/headphone connection. Restart computer.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Sound Is Distorted</h3>
+                                <p><strong>Problem:</strong> Audio crackles or sounds bad.</p>
+                                <p><strong>Fix:</strong> Check speaker/headphone quality. Update audio drivers. Check audio enhancements are off. Try different audio device. Check cable connections.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Microphone Not Working</h3>
+                                <p><strong>Problem:</strong> No one can hear you in calls.</p>
+                                <p><strong>Fix:</strong> Check mic isn't muted in app. Check Windows privacy settings for mic access. Test mic in Sound settings. Update audio drivers. Check mic is plugged into correct port.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Headphones Not Detected</h3>
+                                <p><strong>Problem:</strong> Plug in headphones but sound still from speakers.</p>
+                                <p><strong>Fix:</strong> Check headphone jack is fully inserted. Try different headphones. Check audio settings for output device. Update audio drivers. Check for debris in jack.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input Section -->
+                    <div class="category-section reveal" id="input">
+                        <h2 class="category-title">Keyboard / Mouse</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Keyboard Not Typing</h3>
+                                <p><strong>Problem:</strong> Some or all keys don't work.</p>
+                                <p><strong>Fix:</strong> Check connection (USB or Bluetooth). Try different USB port. Clean under keys. Update keyboard driver. Check keyboard language settings.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Mouse Not Moving</h3>
+                                <p><strong>Problem:</strong> Cursor stuck or mouse unresponsive.</p>
+                                <p><strong>Fix:</strong> Check USB connection. Try different port. Replace batteries (wireless). Clean sensor. Update mouse driver. Try on different computer.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Double-Click Problem</h3>
+                                <p><strong>Problem:</strong> Single click acts like double-click.</p>
+                                <p><strong>Fix:</strong> Check mouse settings in Control Panel. Adjust double-click speed. Clean the mouse button. Try different mouse to isolate. Consider replacing if hardware issue.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Bluetooth Device Won't Connect</h3>
+                                <p><strong>Problem:</strong> Bluetooth keyboard/mouse won't pair.</p>
+                                <p><strong>Fix:</strong> Make sure device is in pairing mode. Turn Bluetooth off and on. Remove old pairing and re-pair. Check battery level. Update Bluetooth drivers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phone Section -->
+                    <div class="category-section reveal" id="phone">
+                        <h2 class="category-title">Phone Issues</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Phone Battery Drains Fast</h3>
+                                <p><strong>Problem:</strong> Battery dies quickly even with light use.</p>
+                                <p><strong>Fix:</strong> Check battery usage in settings. Disable background app refresh. Reduce screen brightness. Turn off location when not needed. Check for battery-draining apps.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Phone Won't Charge</h3>
+                                <p><strong>Problem:</strong> Plug in charger but battery doesn't increase.</p>
+                                <p><strong>Fix:</strong> Try different cable and charger. Clean charging port (carefully with toothpick). Check for lint in port. Try wireless charging if available. Restart phone.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Phone Running Slow</h3>
+                                <p><strong>Problem:</strong> Apps take forever to open, lag everywhere.</p>
+                                <p><strong>Fix:</strong> Clear app caches. Uninstall unused apps. Free up storage. Update the OS. Consider factory reset as last resort (back up first).</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Phone Overheating</h3>
+                                <p><strong>Problem:</strong> Phone gets very hot during use.</p>
+                                <p><strong>Fix:</strong> Remove case while charging. Close background apps. Turn off while charging. Avoid using in direct sunlight. Check for apps using excessive CPU.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Section -->
+                    <div class="category-section reveal" id="security">
+                        <h2 class="category-title">Security / Virus</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Computer Has a Virus</h3>
+                                <p><strong>Problem:</strong> Pop-ups, slow performance, unexpected behavior.</p>
+                                <p><strong>Fix:</strong> Disconnect from internet. Boot in Safe Mode. Run Malwarebytes full scan. Run Windows Defender scan. Consider reinstalling Windows if severe.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Ransomware Detected</h3>
+                                <p><strong>Problem:</strong> Files encrypted, ransom note displayed.</p>
+                                <p><strong>Fix:</strong> DO NOT pay the ransom. Disconnect from network immediately. Contact IT professional. Check if you have backups. Report to authorities.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Account Hacked</h3>
+                                <p><strong>Problem:</strong> Can't access account, password changed.</p>
+                                <p><strong>Fix:</strong> Use "Forgot Password" immediately. Check recovery email. Change passwords on all linked accounts. Enable two-factor authentication. Check sent folder for suspicious emails.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Phishing Email Received</h3>
+                                <p><strong>Problem:</strong> Suspicious email asking for info or with links.</p>
+                                <p><strong>Fix:</strong> DO NOT click any links. DO NOT reply. Mark as spam/phishing. Delete the email. If you did click, change passwords immediately and run malware scan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Other Section -->
+                    <div class="category-section reveal" id="other">
+                        <h2 class="category-title">Other Common Fixes</h2>
+                        <div class="category-grid">
+                            <div class="card fix-card">
+                                <h3>Computer Won't Shut Down</h3>
+                                <p><strong>Problem:</strong> Shutdown hangs, computer stays on.</p>
+                                <p><strong>Fix:</strong> Wait 5-10 minutes (sometimes updates install during shutdown). Force shutdown by holding power button 10 seconds. Check for pending updates. Disable fast startup.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Forgot Windows Password</h3>
+                                <p><strong>Problem:</strong> Can't log into Windows account.</p>
+                                <p><strong>Fix:</strong> Use password reset disk if you made one. Use Microsoft account recovery. Boot from Windows install USB and use Command Prompt to reset password. Last resort: reinstall Windows.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Date and Time Wrong</h3>
+                                <p><strong>Problem:</strong> Clock shows wrong time or date.</p>
+                                <p><strong>Fix:</strong> Check time zone settings. Sync with internet time server. Replace CMOS battery if time resets every boot. Set manually if no internet.</p>
+                            </div>
+                            <div class="card fix-card">
+                                <h3>Random Restarts</h3>
+                                <p><strong>Problem:</strong> Computer restarts without warning.</p>
+                                <p><strong>Fix:</strong> Check for overheating (clean fans, check thermal paste). Check RAM with memory test. Update all drivers. Check power supply. Check for malware.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>TechTutor — 60 fixes and counting. © 2024</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

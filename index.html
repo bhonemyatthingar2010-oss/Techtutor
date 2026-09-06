@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTutor — Your Friendly Tech Support Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ink Flow Background -->
+    <canvas id="ink-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tech<span>Tutor</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="fixes.html">Quick Fixes</a></li>
+                <li><a href="code.html">Code Basics</a></li>
+                <li><a href="hardware.html">Hardware 101</a></li>
+                <li><a href="shortcuts.html">Shortcuts</a></li>
+                <li><a href="tips.html">Tech Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">Free Tech Help Guide</span>
+               <h1>Fix It Yourself<br>with <span class="accent">Confidence</span></h1>
+                <p>Simple, clear solutions for common tech problems. No jargon, no confusion — just answers that work.</p>
+                <div>
+                    <a href="fixes.html" class="btn btn-primary">Browse Fixes</a>
+                    <a href="tips.html" class="btn btn-secondary">Read Tips</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="container">
+        <div class="stats-bar reveal">
+            <div class="stat-item">
+                <span class="stat-number">60</span>
+                <span class="stat-label">Problem Fixes</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">20</span>
+                <span class="stat-label">Code Snippets</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">15</span>
+                <span class="stat-label">Hardware Guides</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">43</span>
+                <span class="stat-label">Shortcuts</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Everything You Need</h2>
+                <p>From beginner basics to quick troubleshooting, find what you're looking for.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <h3>Quick Fixes</h3>
+                    <p>60 common problems solved. Windows errors, internet issues, slow computer — we've got you covered.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <h3>Code Basics</h3>
+                    <p>20 essential code snippets for beginners. HTML, CSS, JavaScript, and Python made simple.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <h3>Hardware 101</h3>
+                    <p>Understand the 15 key components inside your computer. What they do and why they matter.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <h3>Keyboard Shortcuts</h3>
+                    <p>43 shortcuts that save you time every day. Work smarter, not harder.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <h3>Tech Tips</h3>
+                    <p>20 practical tips for security, performance, storage, and battery life.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <h3>Resources</h3>
+                    <p>Curated links to trusted tech resources for when you need to dig deeper.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why TechTutor -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Why TechTutor?</h2>
+                <p>Because everyone deserves to understand their technology.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                <div class="card reveal">
+                    <h3>Simple Language</h3>
+                    <p>No tech jargon. Every explanation is written in plain English that anyone can understand.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Quick Solutions</h3>
+                    <p>Get straight to the fix. Each guide gives you the answer without unnecessary fluff.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Completely Free</h3>
+                    <p>No paywalls, no sign-ups. Just free tech help for everyone who needs it.</p>
+                </div>
+                <div class="card reveal">
+                    <h3>Works Anywhere</h3>
+                    <p>Access from any device — phone, tablet, or computer. Help is always in your pocket.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+        <p>TechTutor — Built with patience and lots of Ctrl+Z. © 2024</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

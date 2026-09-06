@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware 101 — TechTutor</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hardware-section {
+            margin-bottom: 48px;
+        }
+        .hardware-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--silver-moon);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .hardware-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="ink-canvas"></canvas>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tech<span>Tutor</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fixes.html">Quick Fixes</a></li>
+                <li><a href="code.html">Code Basics</a></li>
+                <li><a href="hardware.html" class="active">Hardware 101</a></li>
+                <li><a href="shortcuts.html">Shortcuts</a></li>
+                <li><a href="tips.html">Tech Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section" style="padding-top: 140px;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Hardware 101</h2>
+                <p>Understand the 15 key components inside your computer. What they do and why they matter.</p>
+            </div>
+
+            <!-- Core Components -->
+            <div class="hardware-section reveal">
+                <h3>Core Components</h3>
+                <div class="hardware-grid">
+                    <div class="card">
+                        <h3>CPU (Processor)</h3>
+                        <p>The brain of the computer. Executes instructions and performs calculations. Speed is measured in GHz.</p>
+                    </div>
+                    <div class="card">
+                        <h3>GPU (Graphics Card)</h3>
+                        <p>Handles rendering images, video, and games. Essential for gaming, video editing, and 3D work.</p>
+                    </div>
+                    <div class="card">
+                        <h3>RAM (Memory)</h3>
+                        <p>Short-term storage for running programs. More RAM lets you multitask smoothly. Measured in GB.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Storage (HDD/SSD)</h3>
+                        <p>Long-term storage for files, OS, and programs. SSDs are faster but pricier than HDDs.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Motherboard</h3>
+                        <p>The main circuit board that connects all components together. Determines compatibility.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Power Supply (PSU)</h3>
+                        <p>Converts wall power to usable voltages for components. Wattage rating indicates capacity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Peripherals & Extras -->
+            <div class="hardware-section reveal">
+                <h3>Peripherals & Extras</h3>
+                <div class="hardware-grid">
+                    <div class="card">
+                        <h3>Cooling System</h3>
+                        <p>Fans, heatsinks, or liquid cooling keep components from overheating. Essential for performance.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Case</h3>
+                        <p>The enclosure that houses everything. Comes in various sizes (ATX, micro-ATX, mini-ITX).</p>
+                    </div>
+                    <div class="card">
+                        <h3>Monitor</h3>
+                        <p>Displays visuals. Key specs: resolution, refresh rate, response time, panel type.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Keyboard</h3>
+                        <p>Input device for typing. Mechanical or membrane. Key rollover and switches matter for gamers.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Mouse</h3>
+                        <p>Pointing device. Optical/laser sensors, DPI settings, and ergonomics affect precision and comfort.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Network Card / Wi-Fi Adapter</h3>
+                        <p>Connects to internet. Ethernet for stability, Wi-Fi for convenience. Speeds vary (Wi-Fi 5, 6, 6E).</p>
+                    </div>
+                    <div class="card">
+                        <h3>Sound Card / Audio</h3>
+                        <p>Processes audio output/input. Most motherboards have built-in; dedicated cards for audiophiles.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Optical Drive</h3>
+                        <p>Reads/writes CDs, DVDs, Blu-rays. Less common now, but still used for media and backups.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Ports & Connectors</h3>
+                        <p>USB, HDMI, DisplayPort, Thunderbolt, etc. Determine what peripherals you can connect.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>TechTutor — Know your hardware. © 2024</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Basics — TechTutor</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .code-category {
+            margin-bottom: 48px;
+        }
+        .code-category h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--silver-moon);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .code-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .code-card {
+            background: var(--dark-charcoal);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 18px;
+        }
+        .code-card .code-block {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="ink-canvas"></canvas>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tech<span>Tutor</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fixes.html">Quick Fixes</a></li>
+                <li><a href="code.html" class="active">Code Basics</a></li>
+                <li><a href="hardware.html">Hardware 101</a></li>
+                <li><a href="shortcuts.html">Shortcuts</a></li>
+                <li><a href="tips.html">Tech Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section" style="padding-top: 140px;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Code Basics</h2>
+                <p>20 essential code snippets for beginners. HTML, CSS, JavaScript, and Python made simple.</p>
+            </div>
+
+            <!-- HTML Section -->
+            <div class="code-category reveal">
+                <h3>HTML</h3>
+                <div class="code-grid">
+                    <div class="code-card">
+                        <h4>Basic Structure</h4>
+                        <div class="code-block" id="code-1">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </div>
+                        <button class="copy-btn" data-copy="code-1">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Hyperlink</h4>
+                        <div class="code-block" id="code-2">
+&lt;a href="https://example.com"&gt;Click here&lt;/a&gt;
+                        </div>
+                        <button class="copy-btn" data-copy="code-2">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Image Tag</h4>
+                        <div class="code-block" id="code-3">
+&lt;img src="image.jpg" alt="Description" width="300"&gt;
+                        </div>
+                        <button class="copy-btn" data-copy="code-3">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Unordered List</h4>
+                        <div class="code-block" id="code-4">
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+                        </div>
+                        <button class="copy-btn" data-copy="code-4">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Form Input</h4>
+                        <div class="code-block" id="code-5">
+&lt;form action="/submit" method="post"&gt;
+  &lt;input type="text" name="username" placeholder="Username"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+                        </div>
+                        <button class="copy-btn" data-copy="code-5">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS Section -->
+            <div class="code-category reveal">
+                <h3>CSS</h3>
+                <div class="code-grid">
+                    <div class="code-card">
+                        <h4>Center a Div</h4>
+                        <div class="code-block" id="code-6">
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+                        </div>
+                        <button class="copy-btn" data-copy="code-6">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Hover Effect</h4>
+                        <div class="code-block" id="code-7">
+.button:hover {
+  background-color: #5A6B7A;
+  transform: translateY(-2px);
+}
+                        </div>
+                        <button class="copy-btn" data-copy="code-7">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Responsive Grid</h4>
+                        <div class="code-block" id="code-8">
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+                        </div>
+                        <button class="copy-btn" data-copy="code-8">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Box Shadow</h4>
+                        <div class="code-block" id="code-9">
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+                        </div>
+                        <button class="copy-btn" data-copy="code-9">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Dark Mode Toggle</h4>
+                        <div class="code-block" id="code-10">
+body.dark-mode {
+  background-color: #1A1C1F;
+  color: #E0E4E8;
+}
+                        </div>
+                        <button class="copy-btn" data-copy="code-10">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JavaScript Section -->
+            <div class="code-category reveal">
+                <h3>JavaScript</h3>
+                <div class="code-grid">
+                    <div class="code-card">
+                        <h4>Console Log</h4>
+                        <div class="code-block" id="code-11">
+console.log('Hello, world!');
+                        </div>
+                        <button class="copy-btn" data-copy="code-11">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Alert Message</h4>
+                        <div class="code-block" id="code-12">
+alert('This is a message.');
+                        </div>
+                        <button class="copy-btn" data-copy="code-12">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Event Listener</h4>
+                        <div class="code-block" id="code-13">
+document.getElementById('btn').addEventListener('click', function() {
+  // do something
+});
+                        </div>
+                        <button class="copy-btn" data-copy="code-13">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Fetch API</h4>
+                        <div class="code-block" id="code-14">
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data));
+                        </div>
+                        <button class="copy-btn" data-copy="code-14">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Local Storage</h4>
+                        <div class="code-block" id="code-15">
+localStorage.setItem('key', 'value');
+let data = localStorage.getItem('key');
+                        </div>
+                        <button class="copy-btn" data-copy="code-15">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Section -->
+            <div class="code-category reveal">
+                <h3>Python</h3>
+                <div class="code-grid">
+                    <div class="code-card">
+                        <h4>Print Statement</h4>
+                        <div class="code-block" id="code-16">
+print("Hello, world!")
+                        </div>
+                        <button class="copy-btn" data-copy="code-16">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>For Loop</h4>
+                        <div class="code-block" id="code-17">
+for i in range(5):
+    print(i)
+                        </div>
+                        <button class="copy-btn" data-copy="code-17">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>If-Else</h4>
+                        <div class="code-block" id="code-18">
+age = 18
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+                        </div>
+                        <button class="copy-btn" data-copy="code-18">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>Function Definition</h4>
+                        <div class="code-block" id="code-19">
+def greet(name):
+    return f"Hello, {name}"
+                        </div>
+                        <button class="copy-btn" data-copy="code-19">Copy</button>
+                    </div>
+                    <div class="code-card">
+                        <h4>List Comprehension</h4>
+                        <div class="code-block" id="code-20">
+squares = [x**2 for x in range(10)]
+                        </div>
+                        <button class="copy-btn" data-copy="code-20">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>TechTutor — 20 code snippets to get you started. © 2024</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

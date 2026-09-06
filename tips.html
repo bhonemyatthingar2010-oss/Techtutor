@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Tips — TechTutor</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tip-section {
+            margin-bottom: 48px;
+        }
+        .tip-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--silver-moon);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .tip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="ink-canvas"></canvas>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tech<span>Tutor</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fixes.html">Quick Fixes</a></li>
+                <li><a href="code.html">Code Basics</a></li>
+                <li><a href="hardware.html">Hardware 101</a></li>
+                <li><a href="shortcuts.html">Shortcuts</a></li>
+                <li><a href="tips.html" class="active">Tech Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section" style="padding-top: 140px;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Tech Tips</h2>
+                <p>20 practical tips for security, performance, storage, and battery life.</p>
+            </div>
+
+            <!-- Security -->
+            <div class="tip-section reveal">
+                <h3>Security</h3>
+                <div class="tip-grid">
+                    <div class="card">
+                        <h3>Use a Password Manager</h3>
+                        <p>Generate and store strong, unique passwords. Never reuse passwords across sites.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Enable Two-Factor Authentication (2FA)</h3>
+                        <p>Add an extra layer of security. Use an authenticator app rather than SMS.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Update Software Regularly</h3>
+                        <p>Keep OS, browsers, and apps updated to patch security vulnerabilities.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Avoid Public Wi-Fi for Sensitive Tasks</h3>
+                        <p>Use a VPN or mobile hotspot when doing banking or entering passwords on public networks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance -->
+            <div class="tip-section reveal">
+                <h3>Performance</h3>
+                <div class="tip-grid">
+                    <div class="card">
+                        <h3>Disable Startup Programs</h3>
+                        <p>Reduce boot time by disabling unnecessary startup apps (Task Manager > Startup).</p>
+                    </div>
+                    <div class="card">
+                        <h3>Use an SSD</h3>
+                        <p>If still on HDD, upgrade to SSD. It's the single biggest performance boost.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Keep At Least 20% Free Disk Space</h3>
+                        <p>Full drives slow down. Regularly clean temp files and old downloads.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Restart Regularly</h3>
+                        <p>Reboot at least once a week to clear memory leaks and refresh system resources.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Storage -->
+            <div class="tip-section reveal">
+                <h3>Storage</h3>
+                <div class="tip-grid">
+                    <div class="card">
+                        <h3>Back Up Important Files</h3>
+                        <p>Follow the 3-2-1 rule: 3 copies, 2 different media, 1 offsite.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Use Cloud Storage</h3>
+                        <p>Google Drive, OneDrive, or Dropbox for automatic syncing and backup.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Organize Files Now</h3>
+                        <p>Create a logical folder structure. Spend 10 minutes weekly decluttering.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Archive Old Projects</h3>
+                        <p>Compress and move old files to external drive or cloud to free up space.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Battery -->
+            <div class="tip-section reveal">
+                <h3>Battery Life</h3>
+                <div class="tip-grid">
+                    <div class="card">
+                        <h3>Avoid Full Discharge</h3>
+                        <p>Keep battery between 20% and 80% for longest lifespan. Avoid constant 100%.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Reduce Screen Brightness</h3>
+                        <p>Lower brightness or use auto-brightness to save battery.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Turn Off Unused Radios</h3>
+                        <p>Disable Wi-Fi, Bluetooth, GPS when not needed.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Use Battery Saver Mode</h3>
+                        <p>Enable built-in battery saver to extend usage when low.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- General -->
+            <div class="tip-section reveal">
+                <h3>General Productivity</h3>
+                <div class="tip-grid">
+                    <div class="card">
+                        <h3>Learn Keyboard Shortcuts</h3>
+                        <p>Mastering shortcuts can save hours each week. Check our Shortcuts page.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Use Multiple Desktops</h3>
+                        <p>Windows: Win+Tab, Mac: Mission Control. Separate work and personal.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Set Up Automatic Updates</h3>
+                        <p>Schedule updates during off-hours to avoid interruptions.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Keep Your Desktop Clean</h3>
+                        <p>A cluttered desktop slows you down. Use folders and shortcuts wisely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>TechTutor — 20 tips for smarter tech use. © 2024</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

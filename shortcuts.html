@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortcuts — TechTutor</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shortcut-section {
+            margin-bottom: 48px;
+        }
+        .shortcut-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--silver-moon);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .shortcut-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .shortcut-card {
+            background: var(--dark-charcoal);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .shortcut-card p {
+            margin-bottom: 4px;
+        }
+        .shortcut-card .keys {
+            font-weight: 700;
+            color: var(--pale-slate);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="ink-canvas"></canvas>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Tech<span>Tutor</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fixes.html">Quick Fixes</a></li>
+                <li><a href="code.html">Code Basics</a></li>
+                <li><a href="hardware.html">Hardware 101</a></li>
+                <li><a href="shortcuts.html" class="active">Shortcuts</a></li>
+                <li><a href="tips.html">Tech Tips</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="section" style="padding-top: 140px;">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Keyboard Shortcuts</h2>
+                <p>43 shortcuts that save you time every day. Work smarter, not harder.</p>
+            </div>
+
+            <!-- Windows -->
+            <div class="shortcut-section reveal">
+                <h3>Windows</h3>
+                <div class="shortcut-grid">
+                    <div class="shortcut-card">
+                        <p>Open Start menu</p>
+                        <p class="keys">Win</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Open File Explorer</p>
+                        <p class="keys">Win + E</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Open Run dialog</p>
+                        <p class="keys">Win + R</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Lock your PC</p>
+                        <p class="keys">Win + L</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Switch between apps</p>
+                        <p class="keys">Alt + Tab</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Open Task Manager</p>
+                        <p class="keys">Ctrl + Shift + Esc</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Take screenshot</p>
+                        <p class="keys">Win + Shift + S</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mac -->
+            <div class="shortcut-section reveal">
+                <h3>Mac</h3>
+                <div class="shortcut-grid">
+                    <div class="shortcut-card">
+                        <p>Open Spotlight</p>
+                        <p class="keys">Cmd + Space</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Force quit app</p>
+                        <p class="keys">Cmd + Option + Esc</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Take screenshot</p>
+                        <p class="keys">Cmd + Shift + 4</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Switch between apps</p>
+                        <p class="keys">Cmd + Tab</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Browser -->
+            <div class="shortcut-section reveal">
+                <h3>Browser</h3>
+                <div class="shortcut-grid">
+                    <div class="shortcut-card">
+                        <p>Open new tab</p>
+                        <p class="keys">Ctrl + T</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Close current tab</p>
+                        <p class="keys">Ctrl + W</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Reopen last closed tab</p>
+                        <p class="keys">Ctrl + Shift + T</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Jump to address bar</p>
+                        <p class="keys">Ctrl + L</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Search current page</p>
+                        <p class="keys">Ctrl + F</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editing -->
+            <div class="shortcut-section reveal">
+                <h3>Editing</h3>
+                <div class="shortcut-grid">
+                    <div class="shortcut-card">
+                        <p>Undo last action</p>
+                        <p class="keys">Ctrl + Z</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Redo last undone action</p>
+                        <p class="keys">Ctrl + Y</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Copy selected text</p>
+                        <p class="keys">Ctrl + C</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Paste copied content</p>
+                        <p class="keys">Ctrl + V</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Cut selected text</p>
+                        <p class="keys">Ctrl + X</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Select everything</p>
+                        <p class="keys">Ctrl + A</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Save document</p>
+                        <p class="keys">Ctrl + S</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Function Keys -->
+            <div class="shortcut-section reveal">
+                <h3>Function Keys</h3>
+                <div class="shortcut-grid">
+                    <div class="shortcut-card">
+                        <p>Refresh page/window</p>
+                        <p class="keys">F5</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Toggle fullscreen</p>
+                        <p class="keys">F11</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Rename selected file</p>
+                        <p class="keys">F2</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal -->
+            <div class="shortcut-section reveal">
+                <h3>Terminal / Command Prompt</h3>
+                <div class="shortcut-grid">
+                    <div class="shortcut-card">
+                        <p>Clear terminal</p>
+                        <p class="keys">Ctrl + L (Linux/Mac)</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Stop current command</p>
+                        <p class="keys">Ctrl + C</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Paste in terminal</p>
+                        <p class="keys">Ctrl + Shift + V</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Autocomplete filename/command</p>
+                        <p class="keys">Tab</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other -->
+            <div class="shortcut-section reveal">
+                <h3>Other Useful</h3>
+                <div class="shortcut-grid">
+                    <div class="shortcut-card">
+                        <p>Zoom in</p>
+                        <p class="keys">Ctrl + +</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Zoom out</p>
+                        <p class="keys">Ctrl + -</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Reset zoom</p>
+                        <p class="keys">Ctrl + 0</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Close current window</p>
+                        <p class="keys">Alt + F4 (Windows)</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Minimize all windows</p>
+                        <p class="keys">Win + D</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Open Settings</p>
+                        <p class="keys">Win + I</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Open emoji panel</p>
+                        <p class="keys">Win + .</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Toggle rotation lock</p>
+                        <p class="keys">Win + O</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Project to second screen</p>
+                        <p class="keys">Win + P</p>
+                    </div>
+                    <div class="shortcut-card">
+                        <p>Start dictation (Windows)</p>
+                        <p class="keys">Win + H</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>TechTutor — 43 shortcuts to boost productivity. © 2024</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
